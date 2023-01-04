@@ -17,9 +17,10 @@
   padding: 10px;
 }
 
-.search-form .search {
+.search-form .search, 
+.search-form .submit {
   margin-right: 7px;
-  padding-right: 200px;
+  /* padding-right: 200px; */
 }
 
 .search-form .submit {
@@ -35,4 +36,8 @@
 
 .Temperature {
   font-size: 36px;
+}
+
+.Cities > ul > li {
+  list-style: none;
 }

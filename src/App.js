@@ -1,16 +1,22 @@
-import Weather from './Weather';
-import './App.css';
+import Weather from "./Weather";
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
       <div className="container">
-        <Weather />
+        <Weather city="New York" />
       </div>
-      <a href="https://github.com/KozlitinaNatalia/SheCodes/blob/main/script.js">
-        Open-source code{" "}
-      </a>
-      by Nataliia Kozlitina
+      <footer>
+        <a
+          href="https://github.com/KozlitinaNatalia/Weather_app"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Open-source code{" "}
+        </a>
+        by Nataliia Kozlitina
+      </footer>
     </div>
   );
 }
