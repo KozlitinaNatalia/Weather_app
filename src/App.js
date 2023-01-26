@@ -17,7 +17,7 @@ function App() {
         </a>
         by Nataliia Kozlitina
       </footer>
-    </div>
+     </div>
   );
 }
 

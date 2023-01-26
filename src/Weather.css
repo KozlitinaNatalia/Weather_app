@@ -1,0 +1,55 @@
+.Weather {
+  margin-top: 20px;
+  border: 2px solid cadetblue;
+  font-family: arial, sans-serif;
+  padding: 16px;
+  border-radius: 4px;
+  /* color: rgb(135, 135, 135) */
+}
+
+.Weather h1 {
+  font-size: 24px;
+  font-weight: 100;
+  margin: 20px 0 0 0;
+  line-height: 29px;
+}
+
+.Weather .search-form {
+  margin: 20px;
+}
+
+/* .search-form .search,
+.search-form .submit {
+  padding: 5px;
+} */
+
+.Weather .search-form .submit {
+  background-color: cadetblue;
+  border-color: cadetblue;
+  color: white;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+.Weather .Cities   {
+  list-style: none;
+  text-align: left;
+}
+
+.Weather .temperature {
+  font-weight: bold;
+  color: rgb(33, 33, 33);
+  font-size: 54px;
+  line-height: 64px;
+  font-weight: 400;
+}
+
+.Weather .unit {
+    color:rgb(33, 33, 33);
+    font-size: 16px;
+    font-weight: 400;
+    position: relative;
+    line-height: 1;
+    top: -34px;
+    /* margin-left: 5px; */
+}

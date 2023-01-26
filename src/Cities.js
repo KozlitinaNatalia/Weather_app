@@ -20,6 +20,7 @@ export default function Cities(props) {
   return (
     <div className="Cities">
       <div className="row">
+        <div className="col-1"></div>
         <div className="col-3">{props.name}</div>
         <div className="col-3">{Math.round(temperature)} °C</div>
       </div>

@@ -2,42 +2,6 @@
   font-family: sans-serif;
   text-align: center;
 }
-.App .container {
-  border: 2px solid cadetblue;
-  margin-top: 10px;
-  text-align: left;
-}
 
-.search-form {
-  padding: 8px;
-}
 
-.search-form .search,
-.search-form .submit {
-  padding: 10px;
-}
 
-.search-form .search, 
-.search-form .submit {
-  margin-right: 7px;
-  /* padding-right: 200px; */
-}
-
-.search-form .submit {
-  background-color: cadetblue;
-  border-color: cadetblue;
-  color: white;
-  border-radius: 4px;
-}
-
-.Weather .container {
-  border: none;
-}
-
-.Temperature {
-  font-size: 36px;
-}
-
-.Cities > ul > li {
-  list-style: none;
-}
