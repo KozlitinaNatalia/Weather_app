@@ -55,9 +55,11 @@ export default function Weather(props) {
             Search
           </button>
         </div>
-        {/* <button type="submit" className="submit">
-        Current
-      </button> */}
+        {/* <div className="col-2">
+          <button type="submit" className="current">
+            Current
+          </button>
+        </div> */}
       </div>
     </form>
   );
@@ -65,14 +67,12 @@ export default function Weather(props) {
   if (weather.load) {
     return (
       <div className="Weather">
-        <div className="container">
           {cities.map(function (city, index) {
             return <Cities key={index} name={city} />;
           })}
           {form}
           <WeatherInfo data={weather} />
           <WeatherForecast coordinates={weather.coordinates} data={weather} />
-        </div>
       </div>
     );
   } else {

@@ -2,7 +2,7 @@
   margin-top: 20px;
   border: 2px solid cadetblue;
   font-family: arial, sans-serif;
-  padding: 16px;
+  padding: 25px;
   border-radius: 4px;
   /* color: rgb(135, 135, 135) */
 }
@@ -23,7 +23,7 @@
   padding: 5px;
 } */
 
-.Weather .search-form .submit {
+.Weather .search-form .submit, .current {
   background-color: cadetblue;
   border-color: cadetblue;
   color: white;
