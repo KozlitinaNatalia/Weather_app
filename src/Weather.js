@@ -2,15 +2,18 @@ import React, { useState } from "react";
 import "./Weather.css";
 import axios from "axios";
 import Cities from "./Cities";
-import WeatherInfo from "./WeatherInfo.js";
+import WeatherInfo from "./WeatherInfo";
+import WeatherForecast from "./WeatherForecast";
 
 export default function Weather(props) {
   let [city, setCity] = useState(props.city);
   let [weather, setWeather] = useState({ load: false });
+  let cities = ["New York", "London", "Paris", "Kyiv"];
 
   function showWeather(response) {
     setWeather({
       load: true,
+      coordinates: response.data.coord,
       temperature: response.data.main.temp,
       wind: response.data.wind.speed,
       city: response.data.name,
@@ -21,20 +24,10 @@ export default function Weather(props) {
     });
   }
 
-  // function searchCity(city) {
-  //   if (weather.load === false) {
-  //     let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
-  //     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-  //     axios.get(apiUrl).then(showWeather);
-  //   }
-  // }
-
-  // searchCity(city);
-
-    function searchCity() {
-      let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
-      let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-      axios.get(apiUrl).then(showWeather);
+  function searchCity() {
+    let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(showWeather);
   }
 
   function handleSubmit(event) {
@@ -72,12 +65,14 @@ export default function Weather(props) {
   if (weather.load) {
     return (
       <div className="Weather">
-        <Cities name="New York" />
-        <Cities name="London" />
-        <Cities name="Paris" />
-        <Cities name="Kyiv" />
-        {form}
-        <WeatherInfo data={weather} />
+        <div className="container">
+          {cities.map(function (city, index) {
+            return <Cities key={index} name={city} />;
+          })}
+          {form}
+          <WeatherInfo data={weather} />
+          <WeatherForecast coordinates={weather.coordinates} data={weather} />
+        </div>
       </div>
     );
   } else {

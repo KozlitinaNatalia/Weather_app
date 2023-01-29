@@ -8,16 +8,17 @@ function App() {
         <Weather city="New York" />
       </div>
       <footer>
+        This project was coded by{" "}
         <a
-          href="https://github.com/KozlitinaNatalia/Weather_app"
+          href="https://github.com/KozlitinaNatalia/Weather_app_react"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Open-source code{" "}
-        </a>
-        by Nataliia Kozlitina
+          Nataliia Kozlitina
+        </a>{" "}
+        and is open-sourced
       </footer>
-     </div>
+    </div>
   );
 }
 
