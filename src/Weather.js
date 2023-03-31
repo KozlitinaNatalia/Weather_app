@@ -42,7 +42,7 @@ export default function Weather(props) {
   let form = (
     <form className="search-form" onSubmit={handleSubmit}>
       <div className="row">
-        <div className="col-10">
+        <div className="col-7">
           <input
             type="search"
             className="form-control"
@@ -50,16 +50,11 @@ export default function Weather(props) {
             onChange={updateCity}
           />
         </div>
-        <div className="col-2">
+        <div className="col-3">
           <button type="submit" className="submit">
             Search
           </button>
         </div>
-        {/* <div className="col-2">
-          <button type="submit" className="current">
-            Current
-          </button>
-        </div> */}
       </div>
     </form>
   );
@@ -67,12 +62,12 @@ export default function Weather(props) {
   if (weather.load) {
     return (
       <div className="Weather">
-          {cities.map(function (city, index) {
-            return <Cities key={index} name={city} />;
-          })}
-          {form}
-          <WeatherInfo data={weather} />
-          <WeatherForecast coordinates={weather.coordinates} data={weather} />
+        {cities.map(function (city, index) {
+          return <Cities key={index} name={city} />;
+        })}
+        {form}
+        <WeatherInfo data={weather} />
+        <WeatherForecast coordinates={weather.coordinates} data={weather} />
       </div>
     );
   } else {
