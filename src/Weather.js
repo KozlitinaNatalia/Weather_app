@@ -10,6 +10,27 @@ export default function Weather(props) {
   let [weather, setWeather] = useState({ load: false });
   let cities = ["New York", "London", "Paris", "Kyiv"];
 
+  const codeMapping = {
+    "01d": "clear-sky-day",
+    "01n": "clear-sky-night",
+    "02d": "few-clouds-day",
+    "02n": "few-clouds-night",
+    "03d": "scattered-clouds-day",
+    "03n": "scattered-clouds-night",
+    "04d": "broken-clouds-day",
+    "04n": "broken-clouds-night",
+    "09d": "shower-rain-day",
+    "09n": "shower-rain-night",
+    "10d": "rain-day",
+    "10n": "rain-night",
+    "11d": "thunderstorm-day",
+    "11n": "thunderstorm-night",
+    "13d": "snow-day",
+    "13n": "snow-night",
+    "50d": "mist-day",
+    "50n": "mist-night",
+  };
+
   function showWeather(response) {
     setWeather({
       load: true,
@@ -20,7 +41,9 @@ export default function Weather(props) {
       humidity: response.data.main.humidity,
       description: response.data.weather[0].description,
       date: new Date(response.data.dt * 1000),
-      icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      icon: `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
+      codeMapping[response.data.weather[0].icon]
+    }.png`,
     });
   }
 
